@@ -6,8 +6,8 @@ import (
 )
 
 const (
-	ENUM_QUIT = -1
-	ENUM_HINT = -2
+	EnumQuit = -1
+	EnumHint = -2
 )
 
 func main() {
@@ -23,10 +23,10 @@ func main() {
 			continue
 		}
 
-		if guess == ENUM_QUIT {
+		if guess == EnumQuit {
 			fmt.Println("Thanks for playing!")
 			break
-		} else if guess == ENUM_HINT {
+		} else if guess == EnumHint {
 			fmt.Printf("Answer is: %d\n", actual)
 		}
 
