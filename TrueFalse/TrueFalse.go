@@ -5,6 +5,11 @@ import (
 	"math/rand"
 )
 
+const (
+	ENUM_QUIT = -1
+	ENUM_HINT = -2
+)
+
 func main() {
 	actual := int(rand.Intn(99) + 1)
 	var guess int
@@ -18,10 +23,10 @@ func main() {
 			continue
 		}
 
-		if guess == -1 {
+		if guess == ENUM_QUIT {
 			fmt.Println("Thanks for playing!")
 			break
-		} else if guess == -2 {
+		} else if guess == ENUM_HINT {
 			fmt.Printf("Answer is: %d\n", actual)
 		}
 
