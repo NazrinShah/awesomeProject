@@ -5,10 +5,12 @@ import (
 	"reflect"
 )
 
+type uid int
+
 type Customer struct {
 	FName        string
 	LName        string
-	UserID       int
+	UserID       uid
 	InvoiceTotal float64
 }
 
@@ -21,7 +23,7 @@ func inspect(in interface{}) {
 
 		for i := 0; i < v1.NumField(); i++ {
 			v1Type := v1.Type()
-			fmt.Println(fmt.Sprintf("%s is of type %s and has value %+v", v1Type.Field(i).Name, v1Type.Field(i).Type.Name(), v.Field(i).Interface()))
+			fmt.Println(fmt.Sprintf("%s is of type %s and %s kind and has value %+v", v1Type.Field(i).Name, v1Type.Field(i).Type.Name(), v.Field(i).Kind(), v.Field(i).Interface()))
 		}
 	default:
 		fmt.Println(fmt.Sprintf("variable has type \"%s\" with value [%v]", reflect.TypeOf(in).Name(), reflect.ValueOf(in)))
