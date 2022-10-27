@@ -7,6 +7,6 @@ type Game struct {
 	Price float64
 }
 
-func (g Game) Print() {
+func (g *Game) Print() {
 	fmt.Println(fmt.Sprintf("%s, $%.2f", g.Title, g.Price))
 }

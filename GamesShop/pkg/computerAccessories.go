@@ -7,6 +7,6 @@ type ComputerAccessory struct {
 	Price int
 }
 
-func (c ComputerAccessory) Print() {
+func (c *ComputerAccessory) Print() {
 	fmt.Println(fmt.Sprintf("%s, $%d", c.Title, c.Price))
 }

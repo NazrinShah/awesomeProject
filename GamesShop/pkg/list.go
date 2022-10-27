@@ -6,8 +6,10 @@ type Item interface {
 	Print()
 }
 
-func PrintGamesList(ls []Item) {
-	for i, v := range ls {
+type List []Item
+
+func (l *List) Print() {
+	for i, v := range *l {
 		fmt.Printf("%d. ", i+1)
 		v.Print()
 	}

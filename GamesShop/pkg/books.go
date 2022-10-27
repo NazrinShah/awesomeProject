@@ -7,6 +7,6 @@ type Book struct {
 	Price int
 }
 
-func (b Book) Print() {
+func (b *Book) Print() {
 	fmt.Println(fmt.Sprintf("%s, $%d", b.Title, b.Price))
 }
