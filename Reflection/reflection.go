@@ -16,14 +16,15 @@ func inspect(in interface{}) {
 	switch in.(type) {
 	case Customer:
 		v := reflect.ValueOf(in)
+		v1 := reflect.Indirect(v)
 		fmt.Println(fmt.Sprintf("Customer has %d fields", v.NumField()))
 
-		for i := 0; i < v.NumField(); i++ {
-			fmt.Println(fmt.Sprintf("type %s has value [%+v]", v.Field(i).Type().Name(), v.Field(i).Interface()))
+		for i := 0; i < v1.NumField(); i++ {
+			v1Type := v1.Type()
+			fmt.Println(fmt.Sprintf("%s is of type %s and has value %+v", v1Type.Field(i).Name, v1Type.Field(i).Type.Name(), v.Field(i).Interface()))
 		}
-		break
 	default:
-		fmt.Println(fmt.Sprintf("has type \"%s\" with value [%v]", reflect.TypeOf(in).Name(), reflect.ValueOf(in)))
+		fmt.Println(fmt.Sprintf("variable has type \"%s\" with value [%v]", reflect.TypeOf(in).Name(), reflect.ValueOf(in)))
 	}
 }
 
