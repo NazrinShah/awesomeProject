@@ -5,7 +5,7 @@ import "awesomeProject/GamesShop/pkg"
 func main() {
 	gList := []*pkg.Game{
 		{
-			Title: "Mincraft",
+			Title: "Minecraft",
 			Price: 5,
 		},
 		{
