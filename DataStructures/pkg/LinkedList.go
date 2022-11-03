@@ -83,6 +83,10 @@ func (l *LinkedList) Remove(i int) (int, error) {
 		}
 	}
 
+	if l.size == 0 {
+		l.head = nil
+	}
+
 	return tVal, err
 }
 
