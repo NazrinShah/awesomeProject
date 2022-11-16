@@ -12,6 +12,7 @@ func write(fileName string, res chan string) {
 	file, err := os.Open(fileName)
 	if err != nil {
 		log.Fatalf(err.Error())
+		return
 	}
 
 	scanner := bufio.NewScanner(file)
