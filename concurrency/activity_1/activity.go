@@ -70,10 +70,16 @@ func (gs *GameShop) Display() {
 func manageGameItems(id int) {
 	defer Shop.wg.Done()
 	in := 0
+	locked := false
 
 	for in != QUIT {
-		if !Shop.inputLock.TryLock() {
-			continue
+
+		if !locked {
+			locked = Shop.inputLock.TryLock()
+
+			if !locked {
+				continue
+			}
 		}
 
 		fmt.Println("Select action:\n1: Display Games \n2: Add Game\n3: Quit")
@@ -127,6 +133,7 @@ func manageGameItems(id int) {
 		}
 
 		Shop.inputLock.Unlock()
+		locked = false
 	}
 }
 
