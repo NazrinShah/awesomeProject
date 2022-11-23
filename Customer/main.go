@@ -1,8 +1,8 @@
 package main
 
 import (
-	"awesomeProject/Customer/pkg"
 	"fmt"
+	"github.com/NazrinShah/awesomeProject/Customer/pkg"
 )
 
 func main() {

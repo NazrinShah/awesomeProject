@@ -1,7 +1,7 @@
 package ds_test
 
 import (
-	"awesomeProject/DataStructures/pkg"
+	"github.com/NazrinShah/awesomeProject/DataStructures/pkg"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )

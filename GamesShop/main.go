@@ -1,6 +1,6 @@
 package main
 
-import "awesomeProject/GamesShop/pkg"
+import "github.com/NazrinShah/awesomeProject/GamesShop/pkg"
 
 func main() {
 	var l pkg.List
