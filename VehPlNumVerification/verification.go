@@ -162,11 +162,11 @@ func isValidPlateNumber(prefix []byte, nums []int, check byte) bool {
 
 func main() {
 
-	input, prefix, nums := "", []byte{}, []int{}
+	in, prefix, nums := "", []byte{}, []int{}
 
 	for {
-		input = getInput()
-		valid, errMsg, _prefix, _nums := validateInput(input)
+		in = getInput()
+		valid, errMsg, _prefix, _nums := validateInput(in)
 
 		if !valid {
 			fmt.Println("Error processing input: ", errMsg)
@@ -179,7 +179,7 @@ func main() {
 		break
 	}
 
-	if isValidPlateNumber(prefix, nums, input[len(input)-1]) {
+	if isValidPlateNumber(prefix, nums, in[len(in)-1]) {
 		fmt.Println("The vehicle plate given is correct!")
 	} else {
 		fmt.Println("The vehicle plate given is not correct!")
