@@ -58,7 +58,7 @@ func getOp() int {
 		fmt.Println()
 
 		if err != nil {
-			fmt.Println("Error processing input: %v", err)
+			fmt.Println("Error processing input: ", err)
 			continue
 		}
 
